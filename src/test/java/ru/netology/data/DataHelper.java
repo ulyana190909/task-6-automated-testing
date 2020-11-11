@@ -32,16 +32,18 @@ public class DataHelper {
         String card;
     }
 
-    public static UserAccounts getNumberFirstCard(AuthInfo authInfo) {
+    public static UserAccounts getNumberFirstCard() {
+
         return new UserAccounts("5559 0000 0000 0001");
     }
 
 
-    public static UserAccounts getNumberSecondCard(AuthInfo authInfo) {
+    public static UserAccounts getNumberSecondCard() {
         return new UserAccounts("5559 0000 0000 0002");
     }
 
-    public static UserAccounts getEmptyAccounts(AuthInfo authInfo) {
+    public static UserAccounts getEmptyAccounts() {
+
         return new UserAccounts("");
     }
 
@@ -50,11 +52,13 @@ public class DataHelper {
     }
 
 
-    public static int getBalanceAfterIncrease(int balance, int amount) {
+    public static int getBalanceAfterIncrease(int balance, int amount)
+    {
         return balance + amount;
     }
 
     public static int getBalanceAfterDecrease(int balance, int amount) {
+
         return balance - amount;
     }
 }
