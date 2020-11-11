@@ -19,7 +19,7 @@ public class MoneyTransferBetweenAccounts {
         heading.shouldBe(Condition.visible);
     }
 
-    public void transferBetweenAccounts (DataHelper.UserAccounts UserAccounts, int amount) {
+    public void transferBetweenAccounts(DataHelper.UserAccounts UserAccounts, int amount) {
         amountInput.setValue(String.valueOf(amount));
         fromWhere.setValue(UserAccounts.getCard());
         replenishButton.click();
