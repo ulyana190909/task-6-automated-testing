@@ -1,8 +1,6 @@
 package ru.netology.test;
 import lombok.val;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.netology.data.DataHelper;
 import ru.netology.page.DashboardPage;
 import ru.netology.page.LoginPage;
@@ -12,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataHelper.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MoneyTransferTest {
 
     @BeforeEach
@@ -99,9 +98,9 @@ public class MoneyTransferTest {
     @Order(5)
     void shouldBeErrorIfAmountEmpty() {
         val dashboardPage = new DashboardPage();
-        String amount = "";
+        val amount = "";
         val transmissionPage = dashboardPage.transferToSecondCard();
-        transmissionPage.transferBetweenAccounts(getNumberFirstCard(), Integer.parseInt(amount));
+        transmissionPage.transferBetweenAccountsForTestWithAmountEmpty(getNumberFirstCard(), amount);
         transmissionPage.errorTransfer();
     }
 

@@ -14,6 +14,7 @@ public class DataHelper {
     }
 
     public static AuthInfo getAuthInfo() {
+
         return new AuthInfo("vasya", "qwerty123");
     }
 
@@ -39,6 +40,7 @@ public class DataHelper {
 
 
     public static UserAccounts getNumberSecondCard() {
+
         return new UserAccounts("5559 0000 0000 0002");
     }
 
@@ -48,12 +50,14 @@ public class DataHelper {
     }
 
     public static UserAccounts getNotCorrectCardNumber() {
+
         return new UserAccounts("5559000000000003");
     }
 
 
     public static int getBalanceAfterIncrease(int balance, int amount)
     {
+
         return balance + amount;
     }
 

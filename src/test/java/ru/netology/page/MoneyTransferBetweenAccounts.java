@@ -26,7 +26,15 @@ public class MoneyTransferBetweenAccounts {
         new DashboardPage();
     }
 
+    public void transferBetweenAccountsForTestWithAmountEmpty(DataHelper.UserAccounts UserAccounts, String amount) {
+        amountInput.setValue(String.valueOf(amount));
+        fromWhere.setValue(UserAccounts.getCard());
+        replenishButton.click();
+        new DashboardPage();
+    }
+
     public void errorTransfer() {
+
         error.shouldBe(Condition.visible);
     }
 }
